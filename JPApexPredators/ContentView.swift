@@ -32,6 +32,21 @@ struct ContentView: View {
                     PredatorDetail(predator: predator, position: .camera(MapCamera(centerCoordinate: predator.location, distance: 30000)))
                 } label: {
                     HStack {
+//                        if isWiggling {
+//                            // delete button - had to use just image because it interfered with the "NavigationLink"
+//                            Image(systemName: "x.square.fill")
+//                                .font(.title)
+//                                .padding(.trailing, 13)
+//                                .foregroundStyle(Color(.sRGB, red: 0.595, green: 0, blue: 0, opacity: 1.0))
+//                                .onTapGesture {
+//                                    withAnimation {
+//                                        print("removing \(predator.name)")
+//                                    }
+//                                }
+//                            
+//                        }
+                        
+                        
                         // dino image
                         Image(predator.image)
                             .resizable()
@@ -54,6 +69,12 @@ struct ContentView: View {
                                 .clipShape(.capsule)
                         }
                     }
+                    //                    .scaleEffect(isWiggling ? 1.005 : 1.0)  // Scale for wiggle effect
+                    //                    .rotationEffect(Angle.degrees(isWiggling ? 5 : 0))  // Rotate for wiggle effect
+                    //                    .animation(.easeInOut(duration: 0.1).repeatForever(autoreverses: true), value: isWiggling) // Continuous animation
+//                    .onLongPressGesture {
+//                        isWiggling = true
+//                    }
                 }
             }
             .navigationTitle("Apex Predators")
